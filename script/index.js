@@ -129,6 +129,7 @@ function createCartElement(item) {
 //percorer lista e adicionar elemento
 function listCards(list) {
     const allCards = document.querySelector('.all-cards')
+    allCards.innerHTML = ""
 
     for (let i = 0; i < list.length; i++) {
         let card = addCard(list[i])
@@ -173,34 +174,29 @@ function returnValue(id){
 }
 
 //filtrar items
-function filterItems(list, searchTerm){
-    let searchLowerCase = searchTerm.toLowerCase()
-    let filter = document.querySelector('.filter-card')
+function filterItems(list, search){
+    let searchLowerCase = search.toLowerCase()
+
+    let arrFilter = []
 
     for (let i = 0; i < list.length; i++) {
         let itemName = list[i].nameItem.toLowerCase()
         let itemDescription = list[i].description.toLowerCase()
 
         if (itemName.includes(searchLowerCase) || itemDescription.includes(searchLowerCase)){
-            let card = addCard(list[i])
-            filter.appendChild(card)
+            arrFilter.push(list[i])
         }
     }
+
+    return arrFilter
 }
 
 listCards(data)
 
 let btnSearch = document.querySelector('.search-button')
 let searchInput = document.querySelector('.search-input')
-let allCards = document.querySelector('.all-cards')
 
 btnSearch.addEventListener('click', function(){
-    if (allCards.classList.contains('hide')){
-        location.reload()
-    } else {
-        allCards.classList.add('hide')
-        let search = searchInput.value
-        filterItems(data, search)
-    }
+    let search = searchInput.value
+    listCards(filterItems(data, search))
 })
-
