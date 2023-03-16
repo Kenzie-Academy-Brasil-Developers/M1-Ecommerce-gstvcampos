@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script src="script/database.js" defer></script>
+    <script src="script/index.js" defer></script>
     
     <title>Weartake</title>
   </head>
@@ -24,7 +26,10 @@
     </header>
     <main>
       <section class="main-cards">
-        <ul></ul>
+        <ul class="all-cards">
+        </ul>
+        <ul class="filter-card">
+        </ul>
       </section>
       <section class="main-details">
         <div class="main-search">
@@ -45,15 +50,16 @@
           </div>
 
           <div class="cart-products">
-            <ul class="cart-list"></ul>
+            <ul class="cart-list">
+            </ul>
           </div>
-          <div class="cart-details">
+          <div class="cart-details hide">
             <div class="details-values">
-              <p>Quantidade:</p><span>0</span>
+              <p>Quantidade:</p><span class="cart-count">0</span>
             </div>
             <div class="details-values">
               <p>Total:</p>
-              <span>R$0,00</span>
+              <span class="cart-value">R$0,00</span>
             </div>
 
           </div>
