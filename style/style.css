@@ -120,6 +120,16 @@ main {
 }
 
 /* minha parte */
+.nav-button {
+  background-color: transparent;
+  border: none;
+
+}
+.nav-button:hover {
+  text-decoration: underline;
+  color: #37268C;
+}
+
 .cart-products {
   overflow-y: auto;
   height: 300px;

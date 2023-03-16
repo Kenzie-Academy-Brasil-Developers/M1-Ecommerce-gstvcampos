@@ -182,8 +182,11 @@ function filterItems(list, search){
     for (let i = 0; i < list.length; i++) {
         let itemName = list[i].nameItem.toLowerCase()
         let itemDescription = list[i].description.toLowerCase()
+        let itemTag = list[i].tag[0].toLowerCase()
 
-        if (itemName.includes(searchLowerCase) || itemDescription.includes(searchLowerCase)){
+        if (itemName.includes(searchLowerCase) || 
+        itemDescription.includes(searchLowerCase) ||
+        itemTag.includes(searchLowerCase)){
             arrFilter.push(list[i])
         }
     }
@@ -200,3 +203,18 @@ btnSearch.addEventListener('click', function(){
     let search = searchInput.value
     listCards(filterItems(data, search))
 })
+
+let btnTag = [...document.querySelectorAll('.nav-button')]
+
+console.log(btnTag)
+for (let i = 0; i < btnTag.length; i++) {
+    btnTag[i].addEventListener('click', function(){
+        let search = btnTag[i].innerText;
+        console.log(search)
+        if (search == "Todos") {
+            listCards(filterItems(data, " "))
+        } else {
+            listCards(filterItems(data, search))
+        }
+    })
+}
