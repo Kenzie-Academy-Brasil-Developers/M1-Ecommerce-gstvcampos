@@ -210,7 +210,6 @@ console.log(btnTag)
 for (let i = 0; i < btnTag.length; i++) {
     btnTag[i].addEventListener('click', function(){
         let search = btnTag[i].innerText;
-        console.log(search)
         if (search == "Todos") {
             listCards(filterItems(data, " "))
         } else {
