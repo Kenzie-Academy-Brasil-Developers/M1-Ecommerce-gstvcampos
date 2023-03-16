@@ -52,7 +52,7 @@ function addCard(item) {
         let id = parseInt(idElement.substring(4))
         let valueElement = returnValue(id)
 
-        if (!checkCart(id)){
+
             let cardCart = searchId(id)
 
             let elementCart = createCartElement(cardCart)
@@ -66,7 +66,7 @@ function addCard(item) {
             //valor dos items
             cartSum += valueElement
             document.querySelector('.cart-value').innerHTML = cartSum
-        }
+
     })
 
     return newCard
@@ -134,16 +134,6 @@ function listCards(list) {
     for (let i = 0; i < list.length; i++) {
         let card = addCard(list[i])
         allCards.appendChild(card)
-    }
-}
-
-//verificar se já tem o item no carrinho
-function checkCart(id){
-    let element = document.querySelector('#cart_'+id)
-    if (element == null) {
-        return false
-    } else {
-        return true
     }
 }
 
