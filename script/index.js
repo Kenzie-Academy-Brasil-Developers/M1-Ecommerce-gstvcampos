@@ -206,7 +206,6 @@ btnSearch.addEventListener('click', function(){
 
 let btnTag = [...document.querySelectorAll('.nav-button')]
 
-console.log(btnTag)
 for (let i = 0; i < btnTag.length; i++) {
     btnTag[i].addEventListener('click', function(){
         let search = btnTag[i].innerText;
